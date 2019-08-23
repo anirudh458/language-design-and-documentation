@@ -1,0 +1,33 @@
+Simple{
+func g(a int,n int) int
+{
+    i int;
+    j int;
+    z int;
+    k int;
+    z=0;
+    j=1;
+    for(i=0;i=i+1;i<n)
+    {
+        for(k=0;k=k+1;k<a)
+        {
+            j=j*i;
+        }
+        z=z+j;
+        j=1;
+    }
+    return z;
+}
+
+func main()
+{
+    a int;
+    n int;
+    a=10;
+    n=3;
+
+    return g(a,n);
+
+
+}
+}

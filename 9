@@ -1,0 +1,40 @@
+Simple{
+func main()
+{
+    m int;
+    n int;
+    c int;
+    d int;
+    2Darr first [10][10] int; 
+    2Darr second [10][10] int;
+    2Darr sum [10][10] int;
+
+   //Enter the number of rows and columns of matrix
+   m= ;
+   n= ;
+    2Darr mat1 [N][N] int;
+    mat1 = { {1, 1, 1, 1}, 
+                    {2, 2, 2, 2}, 
+                    {3, 3, 3, 3}, 
+                    {4, 4, 4, 4}}; 
+  
+    2Darr mat2 [N][N] int;
+    mat2 = { {1, 1, 1, 1}, 
+                    {2, 2, 2, 2}, 
+                    {3, 3, 3, 3}, 
+                    {4, 4, 4, 4}}; 
+   
+   //Sum of entered matrices:-
+   
+   for (c = 0; c < m; c=c+1) {
+      for (d = 0 ; d < n; d=d+1) {
+         sum[c][d] = first[c][d] + second[c][d];
+         print_int(sum[c][d]);
+      }
+      print_string("\n");
+   }
+ 
+   return 0;
+
+}
+}

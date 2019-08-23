@@ -1,0 +1,84 @@
+Simple{
+func getMax(int arr[],n int) int 
+{ 
+    mx int;
+    mx = arr[0]; 
+    i int;
+    for (i = 1; i < n; i=i+1) 
+        if (arr[i] > mx) 
+        {
+            mx = arr[i];
+        } 
+    return mx; 
+} 
+  
+// A function to do counting sort of arr[] according to 
+// the digit represented by exp. 
+func countSort(1Darr arr[] int, n int, exp int) void
+{ 
+    1Darr output [n] int; // output array 
+    i int ;
+    count[10] = {0}; 
+  
+    // Store count of occurrences in count[] 
+    for (i = 0; i < n; i=i+1) 
+    {
+        count[ (arr[i]/exp)%10 ] = count[ (arr[i]/exp)%10 ] +1 ; 
+    }
+  
+    // Change count[i] so that count[i] now contains actual 
+    //  position of this digit in output[] 
+    for (i = 1; i < 10; i=i+1) 
+    {
+        count[i] = count[i] + count[i - 1]; 
+    }
+    // Build the output array 
+    for (i = n - 1; i >= 0; i=i-1) 
+    { 
+        output[count[ (arr[i]/exp)%10 ] - 1] = arr[i]; 
+        count[ (arr[i]/exp)%10 ] = count[ (arr[i]/exp)%10 ] -1; 
+    } 
+  
+    // Copy the output array to arr[], so that arr[] now 
+    // contains sorted numbers according to current digit 
+    for (i = 0; i < n; i=i+1) 
+    {
+        arr[i] = output[i];
+    } 
+} 
+  
+
+func radixsort(1Darr arr[] int ,n int) void 
+{ 
+    // Find the maximum number to know number of digits 
+    m int; 
+    m = getMax(arr, n); 
+  
+    // Do counting sort for every digit. Note that instead 
+    // of passing digit number, exp is passed. exp is 10^i 
+    // where i is current digit number 
+    exp int;
+    for (exp = 1; m/exp > 0; exp = exp* 10) 
+    {
+        countSort(arr, n, exp);
+    } 
+} 
+
+  
+// Driver program to test above functions 
+func main() int
+{ 
+    1Darr arr [8] int;
+    arr = {170, 45, 75, 90, 802, 24, 2, 66}; 
+    n int;
+    i int;
+    n= 8; 
+    radixsort(arr, n); 
+    for (i = 0; i < n; i=i+1) 
+    {
+        print_int(arr[i]);
+        print_string(' ')
+     }
+     return 0;
+} 
+}

@@ -1,0 +1,38 @@
+Simple{
+func g(n int) int
+{
+    i int;
+    flag int;
+    check int;
+    sum int;
+    sum=0;
+    check = 1;
+    while(check < n)
+    {
+        flag = 0;
+        for(i = 2; i <= (check/2); i = i+1)
+        {
+            if(check % i == 0)
+            {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0)
+        {
+            sum = sum +check;
+        }
+        check = check + 1;
+    }
+    return sum;
+}
+
+func main()
+{
+    n int;
+    n=3;
+
+    return g(a,n);
+
+
+}}
